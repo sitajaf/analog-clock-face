@@ -20,19 +20,24 @@ ClockBuilder.prototype.get = function (timeString) {
 
     var clock = ["o", "o", "o", "o", "o", "o", "o", "o", "o", "o", "o", "o"];
 
-    var hourPosition2 = hourPosition(hour);
-    clock[hourPosition2] = "h";
-    var minutePosition2 = minutePosition(minutes);
-    clock[minutePosition2] = "m";
+    var hourPosition = getHourPosition(hour);
+    var minutePosition = getMinutePosition(minutes);
 
+    if (hourPosition === minutePosition) {
+        clock[hourPosition] = "x";
+    } else {
+        clock[hourPosition] = "h";
+        clock[minutePosition] = "m";
+    }
+    
     return clock;
 };
 
-function hourPosition(hour) {
+function getHourPosition(hour) {
     return hour > 12 ? hour - 12 : hour;
 }
 
-function minutePosition(minutes) {
+function getMinutePosition(minutes) {
     return (minutes - (minutes % 5)) / 5;
 }
 
