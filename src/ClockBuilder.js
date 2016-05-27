@@ -18,6 +18,18 @@ ClockBuilder.prototype.get = function (timeString) {
         throw new ClockException("Invalid minutes!");
     }
 
+    return clockArray(hour, minutes);
+};
+
+function getHourPosition(hour) {
+    return hour > 12 ? hour - 12 : hour;
+}
+
+function getMinutePosition(minutes) {
+    return (minutes - (minutes % 5)) / 5;
+}
+
+function clockArray(hour, minutes) {
     var clock = ["o", "o", "o", "o", "o", "o", "o", "o", "o", "o", "o", "o"];
 
     var hourPosition = getHourPosition(hour);
@@ -29,16 +41,6 @@ ClockBuilder.prototype.get = function (timeString) {
         clock[hourPosition] = "h";
         clock[minutePosition] = "m";
     }
-    
+
     return clock;
-};
-
-function getHourPosition(hour) {
-    return hour > 12 ? hour - 12 : hour;
 }
-
-function getMinutePosition(minutes) {
-    return (minutes - (minutes % 5)) / 5;
-}
-
-
