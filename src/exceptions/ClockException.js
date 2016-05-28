@@ -8,4 +8,3 @@ function ClockException (message){
 
 ClockException.prototype = Object.create(Error.prototype);
 ClockException.prototype.constructor = ClockException;
-
