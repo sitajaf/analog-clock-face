@@ -28,8 +28,8 @@ ClockBuilder.prototype.get = function (timeString) {
 function clockArray(hour, minutes) {
     var clock = ['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'];
 
-    var hourPosition = getHourPosition(hour);
-    var minutePosition = getMinutePosition(minutes);
+    var hourPosition = hour > 11 ? hour - 12 : hour;
+    var minutePosition = (minutes - (minutes % 5)) / 5;
 
     if (hourPosition === minutePosition) {
         clock[hourPosition] = 'x';
@@ -39,12 +39,4 @@ function clockArray(hour, minutes) {
     }
 
     return clock;
-}
-
-function getHourPosition(hour) {
-    return hour > 11 ? hour - 12 : hour;
-}
-
-function getMinutePosition(minutes) {
-    return (minutes - (minutes % 5)) / 5;
 }
