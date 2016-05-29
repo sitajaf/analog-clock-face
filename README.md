@@ -1,4 +1,4 @@
-### analogue-clock-face
+### analog-clock-face
 
 A nodejs app that draws an analog clock representing the input provided. 
 
