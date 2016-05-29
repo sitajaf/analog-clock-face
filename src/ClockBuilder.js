@@ -42,7 +42,7 @@ function clockArray(hour, minutes) {
 }
 
 function getHourPosition(hour) {
-    return hour > 12 ? hour - 12 : hour;
+    return hour > 11 ? hour - 12 : hour;
 }
 
 function getMinutePosition(minutes) {

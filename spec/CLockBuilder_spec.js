@@ -64,6 +64,12 @@ describe("ClockBuilder", function () {
         expect(builder.get("00:30")).toEqual(expectValue);
     });
 
+    it("should return representation of 12:46", function () {
+        var expectValue = ["h", "o", "o", "o", "o", "o", "o", "o", "o", "m", "o", "o"];
+
+        expect(builder.get("12:46")).toEqual(expectValue);
+    });
+
     it("should return representation of 00:00", function () {
         var expectValue = ["x", "o", "o", "o", "o", "o", "o", "o", "o", "o", "o", "o"];
 
