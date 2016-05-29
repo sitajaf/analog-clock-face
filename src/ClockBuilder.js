@@ -6,7 +6,7 @@ function ClockBuilder() {
 }
 
 ClockBuilder.prototype.get = function (timeString) {
-    var time = timeString.split(":");
+    var time = timeString.split(':');
     var hour = Number(time[0]);
     var minutes = time[1];
 
@@ -15,27 +15,27 @@ ClockBuilder.prototype.get = function (timeString) {
     }
 
     if (isNaN(hour) || hour < 0 || hour > 23 || time[0].length !== 2) {
-        throw new ClockException("Invalid hour!");
+        throw new ClockException('Invalid hour!');
     }
 
     if (isNaN(minutes) || minutes < 0 || minutes > 59) {
-        throw new ClockException("Invalid minutes!");
+        throw new ClockException('Invalid minutes!');
     }
 
     return clockArray(hour, minutes);
 };
 
 function clockArray(hour, minutes) {
-    var clock = ["o", "o", "o", "o", "o", "o", "o", "o", "o", "o", "o", "o"];
+    var clock = ['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'];
 
     var hourPosition = getHourPosition(hour);
     var minutePosition = getMinutePosition(minutes);
 
     if (hourPosition === minutePosition) {
-        clock[hourPosition] = "x";
+        clock[hourPosition] = 'x';
     } else {
-        clock[hourPosition] = "h";
-        clock[minutePosition] = "m";
+        clock[hourPosition] = 'h';
+        clock[minutePosition] = 'm';
     }
 
     return clock;
