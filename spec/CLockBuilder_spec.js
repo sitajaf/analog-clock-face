@@ -3,6 +3,19 @@ var Builder = require('../src/ClockBuilder.js');
 describe("ClockBuilder", function () {
     var builder = new Builder();
 
+    it("should ensure proper time format ", function () {
+        expect(function () {
+            builder.get("21.34");
+        }).toThrowError("Invalid time!");
+    });
+
+    it("should ensure proper time length", function () {
+        expect(function () {
+            builder.get("21:3");
+        }).toThrowError("Invalid time!");
+    });
+    
+
     it("should not allow hours less than 00 ", function () {
         expect(function () {
             builder.get("-21:34");
