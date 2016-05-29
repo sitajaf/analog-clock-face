@@ -1,6 +1,6 @@
-### analog-clock-face
+### analogue-clock-face
 
-A nodejs app that draws an analog clock representing the input provided. 
+A nodejs app that draws an analogue clock representing the input provided. 
 
 Ensure node js is installed including npm its package manager.
 
