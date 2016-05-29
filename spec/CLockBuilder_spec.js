@@ -19,7 +19,7 @@ describe("ClockBuilder", function () {
     it("should not allow hours less than 00 ", function () {
         expect(function () {
             builder.get("-21:34");
-        }).toThrowError("Invalid hour!");
+        }).toThrowError("Invalid time!");
     });
 
     it("should not allow hours greater than 23", function () {
@@ -31,7 +31,7 @@ describe("ClockBuilder", function () {
     it("should not allow minutes less than 0", function () {
         expect(function () {
             builder.get("09:-12");
-        }).toThrowError("Invalid minutes!");
+        }).toThrowError("Invalid time!");
     });
 
     it("should not allow minutes greater than 59", function () {
@@ -43,7 +43,7 @@ describe("ClockBuilder", function () {
     it("should not allow hours with single digit", function () {
         expect(function () {
             builder.get("1:30");
-        }).toThrowError("Invalid hour!");
+        }).toThrowError("Invalid time!");
     });
 
     it("should return representation of 22:30", function () {
