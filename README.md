@@ -1,8 +1,12 @@
 ### analogue-clock-face
 
-Draws an analogues clock representing the input provided
+A nodejs app that draws an analog clock representing the input provided. 
 
-* To install dependecies (should be done atleast once before running app)
+Ensure node js is installed including npm its package manager.
+
+Then:
+
+* To install app dependecies (should be done atleast once before running tests)
   
   `./go init`
   
